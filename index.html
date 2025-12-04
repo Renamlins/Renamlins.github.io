@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Renan G. Azanha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- VARIÁVEIS E RESET --- */
+        :root {
+            --bg-color: #121214;
+            --card-bg: #202024;
+            --text-primary: #e1e1e6;
+            --text-secondary: #a8a8b3;
+            --accent-green: #00B37E;
+            --accent-purple: #8257e5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body { background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- LAYOUT --- */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* --- HEADER --- */
+        header { padding: 20px 0; border-bottom: 1px solid #323238; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo span { color: var(--accent-green); }
+        .social-links a { margin-left: 20px; font-size: 1.2rem; color: var(--text-secondary); }
+        .social-links a:hover { color: var(--accent-green); }
+
+        /* --- HERO SECTION --- */
+        .hero { display: flex; align-items: center; justify-content: space-between; padding: 80px 0; gap: 40px; }
+        
+        .hero-text h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 15px; }
+        .hero-text h1 span { color: var(--accent-purple); }
+        .hero-text h2 { font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 20px; font-weight: normal; }
+        .hero-text p { color: var(--text-secondary); max-width: 500px; margin-bottom: 30px; }
+
+        .btn {
+            display: inline-block; padding: 12px 30px; border-radius: 5px; font-weight: bold; cursor: pointer;
+        }
+        .btn-primary { background: var(--accent-green); color: #fff; border: 1px solid var(--accent-green); }
+        .btn-primary:hover { background: #00875f; }
+        .btn-outline { border: 1px solid var(--text-secondary); margin-left: 10px; color: var(--text-primary); }
+        .btn-outline:hover { border-color: var(--accent-purple); color: var(--accent-purple); }
+
+        .hero-img img {
+            width: 300px; height: 300px; object-fit: cover; border-radius: 50%;
+            border: 4px solid var(--card-bg); box-shadow: 0 0 20px rgba(0, 179, 126, 0.2);
+        }
+
+        /* --- SKILLS --- */
+        .section-title { font-size: 2rem; margin-bottom: 40px; border-left: 5px solid var(--accent-green); padding-left: 15px; }
+        
+        .skills-grid { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 80px; }
+        .skill-tag { background: var(--card-bg); padding: 10px 20px; border-radius: 50px; border: 1px solid #323238; font-size: 0.9rem; }
+        .skill-tag:hover { border-color: var(--accent-purple); transform: translateY(-2px); }
+        .skill-tag i { margin-right: 8px; color: var(--accent-green); }
+
+        /* --- PROJETOS --- */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        
+        .project-card { background: var(--card-bg); border-radius: 10px; overflow: hidden; border: 1px solid #323238; transition: 0.3s; }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--accent-green); }
+        
+        .card-header { height: 8px; background: var(--accent-purple); }
+        .card-body { padding: 25px; }
+        .card-body h3 { margin-bottom: 10px; }
+        .card-body p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; }
+        .tech-stack { font-size: 0.8rem; color: var(--accent-green); margin-bottom: 20px; }
+        
+        .card-link { color: #fff; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; }
+        .card-link:hover { color: var(--accent-green); }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 40px 0; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid #323238; }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-text p { margin: 0 auto 30px; }
+            .hero-img img { width: 200px; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Renan<span>.dev</span></div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/renan-gon%C3%A7alves-azanha-852b5011a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Renamlins" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:renamazanhalins@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container hero">
+        <div class="hero-text">
+            <h2>Olá, eu sou</h2>
+            <h1>Renan G. Azanha<span>.</span></h1>
+            <h2>Analista de Dados & Desenvolvedor</h2>
+            <p>
+                Especialista em transformar dados complexos em decisões visuais. 
+                Combino a lógica do <strong>Oracle SQL</strong> com a estratégia de <strong>Vendas</strong> 
+                e o visual do <strong>Design</strong>.
+            </p>
+            <div>
+                <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                <a href="Renan_Gonçalves_Azanha_-_.pdf" target="_blank" class="btn btn-outline">Download CV</a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="https://via.placeholder.com/300/202024/00B37E?text=Renan" alt="Foto de Renan" id="profile-pic">
+        </div>
+    </section>
+
+    <section class="container">
+        <h3 class="section-title">Habilidades</h3>
+        <div class="skills-grid">
+            <div class="skill-tag"><i class="fas fa-database"></i> Oracle SQL / Winthor</div>
+            <div class="skill-tag"><i class="fas fa-table"></i> Excel Avançado / VBA</div>
+            <div class="skill-tag"><i class="fas fa-chart-line"></i> Análise de KPIs</div>
+            <div class="skill-tag"><i class="fas fa-code"></i> HTML5 / CSS3 / JS</div>
+            <div class="skill-tag"><i class="fas fa-paint-brush"></i> Design de Dashboards</div>
+            <div class="skill-tag"><i class="fas fa-users"></i> Gestão de Vendas</div>
+            <div class="skill-tag"><i class="fas fa-handshake"></i> Negociação B2B</div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h3 class="section-title">Projetos Recentes</h3>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="card-header" style="background: #00B37E;"></div>
+                <div class="card-body">
+                    <h3>Dashboard Executivo & SQL</h3>
+                    <p>Sistema completo de BI: Query Oracle SQL para extração de Churn/Reativação e Dashboard interativo para gestão comercial.</p>
+                    <div class="tech-stack">SQL • Excel • Data Viz</div>
+                    <a href="https://renamlins.github.io/sales-performance-analytics-oracle/" target="_blank" class="card-link">Ver Projeto <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header" style="background: #8257e5;"></div>
+                <div class="card-body">
+                    <h3>Calculadora Financeira Web</h3>
+                    <p>Aplicação Web responsiva para cálculo de viabilidade de portabilidade de crédito, com lógica financeira em JS puro.</p>
+                    <div class="tech-stack">JavaScript • HTML • CSS</div>
+                    <a href="https://renamlins.github.io/sales-performance-analytics-oracle/calculadora.html" target="_blank" class="card-link">Testar App <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header" style="background: #e52e4d;"></div>
+                <div class="card-body">
+                    <h3>Identidade Visual & UI</h3>
+                    <p>Criação de identidade visual focada em tech e dados, aplicando conceitos de design gráfico para interfaces limpas.</p>
+                    <div class="tech-stack">Design • UI/UX • Branding</div>
+                    <a href="#" class="card-link">Em Breve <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por Renan G. Azanha © 2025 - Castanhal, PA</p>
+    </footer>
+
+    <script>
+        const img = document.getElementById('profile-pic');
+        const realImg = new Image();
+        realImg.src = 'foto-perfil.jpg';
+        realImg.onload = () => img.src = 'foto-perfil.jpg';
+    </script>
+</body>
+</html>
