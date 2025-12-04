@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identidade Visual | Renan G. Azanha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --bg-color: #121214; --text-color: #e1e1e6; --green: #00B37E; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body { background-color: var(--bg-color); color: var(--text-color); display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 20px; }
+        
+        header { width: 100%; max-width: 1000px; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .back-link { color: var(--text-color); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: bold; transition: 0.3s; }
+        .back-link:hover { color: var(--green); }
+        
+        .project-container { max-width: 1200px; width: 100%; text-align: center; }
+        .project-info { margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        h1 span { color: #e52e4d; } /* Vermelho da identidade */
+        p { color: #a8a8b3; font-size: 1.1rem; line-height: 1.6; }
+
+        /* A Moldura da Imagem */
+        .image-frame {
+            background: #202024;
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid #323238;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            margin-bottom: 50px;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .footer-note { font-size: 0.9rem; color: #555; margin-top: auto; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao Hub</a>
+    </header>
+
+    <main class="project-container">
+        <div class="project-info">
+            <h1>Design System <span>Renan.dev</span></h1>
+            <p>
+                Documentação oficial da identidade visual desenvolvida para este portfólio.
+                O objetivo foi criar uma interface "Dark Mode" que reduzisse a fadiga visual, 
+                usando cores neon para guiar a atenção do usuário para as ações principais (CTAs).
+            </p>
+        </div>
+
+        <div class="image-frame">
+            <img src="design-system.jpg" alt="Board de Identidade Visual e UI Kit">
+        </div>
+    </main>
+
+    <p class="footer-note">Projeto desenvolvido utilizando conceitos de Atomic Design e UI.</p>
+
+</body>
+</html>
