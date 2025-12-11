@@ -131,6 +131,44 @@
             .hero-text p { margin: 0 auto 30px; }
             .hero-img img { width: 200px; height: 200px; }
         }
+
+        /* --- CONTATO --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-form .input-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            background: var(--card-bg);
+            border: 1px solid #323238;
+            border-radius: 5px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: var(--accent-green);
+        }
+
+        /* Responsivo para celular */
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr; /* Um embaixo do outro no celular */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -218,9 +256,92 @@
         </div>
     </section>
 
+    <section id="contato" class="container" style="margin-bottom: 80px;">
+        <h3 class="section-title">Vamos conversar?</h3>
+        
+        <div class="contact-wrapper">
+            <div class="contact-text">
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                    Estou disponível para novos projetos e oportunidades. 
+                    Se você quer conversar sobre dados, SQL ou desenvolvimento, me mande uma mensagem!
+                </p>
+                <ul style="margin-bottom: 30px;">
+                    <li style="margin-bottom: 15px;">
+                        <i class="fas fa-envelope" style="color: var(--accent-green); margin-right: 10px;"></i>
+                        renamazanhalins@gmail.com
+                    </li>
+                    <li>
+                        <i class="fab fa-linkedin" style="color: var(--accent-green); margin-right: 10px;"></i>
+                        linkedin.com/in/renan-gonçalves-azanha-852b5011a
+                    </li>
+                </ul>
+            </div>
+
+            <form id="my-form" action="https://formspree.io/f/xeoypzlz" method="POST" class="contact-form">
+                
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Seu Nome" required>
+                </div>
+                
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                </div>
+                
+                <div class="input-group">
+                    <textarea name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
+                </div>
+
+                <button type="submit" id="my-form-button" class="btn btn-primary" style="width: 100%; border: none;">
+                    Enviar Mensagem <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                </button>
+                
+                <p id="my-form-status" style="margin-top: 15px; text-align: center; font-weight: bold;"></p>
+            </form>
+
+        </div>
+    </section>
+
     <footer>
         <p>Desenvolvido por Renan G. Azanha © 2025 - Castanhal, PA</p>
     </footer>
+
+    <script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault(); // Impede o site de mudar de página
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.style.color = "#00B37E"; // Verde (Sucesso)
+          status.innerHTML = "Mensagem enviada com sucesso! Obrigado.";
+          form.reset(); // Limpa os campos
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.style.color = "red";
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              status.style.color = "red";
+              status.innerHTML = "Opa! Houve um erro no envio.";
+            }
+          })
+        }
+      }).catch(error => {
+        status.style.color = "red";
+        status.innerHTML = "Opa! Houve um erro no envio.";
+      });
+    }
+    form.addEventListener("submit", handleSubmit);
+</script>
 
 </body>
 </html>
