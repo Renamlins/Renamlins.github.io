@@ -41,19 +41,6 @@ Sou um profissional híbrido que atua na interseção entre **Estratégia Comerc
 
 ---
 
-### 📈 GitHub Stats
-
-<div align="center">
-  <a href="https://github.com/Renamlins">
-    <img height="180" src="https://github-readme-stats.vercel.app/api?username=Renamlins&show_icons=true&theme=dark&hide_border=true" />
-  </a>
-  <a href="https://github.com/Renamlins">
-    <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Renamlins&layout=compact&theme=dark&hide_border=true" />
-  </a>
-</div>
-
----
-
 ### 📫 Contato
 Está procurando um profissional que entende tanto de **código** quanto de **negócio**? Vamos conversar!
 
